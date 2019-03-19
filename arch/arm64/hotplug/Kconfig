@@ -13,3 +13,39 @@ config ASMP
 
 	  For MPU based protection-enabled targets please refer to
 	  MSM_KERNEL_PROTECT_MPU
+
+config LAZYPLUG
+	bool "Lazyplug Conservative hotplugging for generic devices"
+	default y
+	help
+	  This enables the conservative hotplugging, lazyplug by arter97
+	  based on intelli_plug. Refer to the comments for more info.
+
+config ALUCARD_HOTPLUG
+	bool "Alucard hotplug"
+ 	default y
+ 	help
+ 	  Generic Alucard-hotplug cpu hotplug driver for ARM SOCs
+
+config INTELLI_HOTPLUG
+	bool "Intelli hotplug driver"
+	depends on HOTPLUG_CPU
+	default y
+	help
+	  An intelligent cpu hotplug driver for
+	  Low Latency Frequency Transition capable processors.
+
+config BLU_PLUG
+	bool "Dynamic hotplug driver"
+	depends on HOTPLUG_CPU
+	default y
+	help
+          The Dynamic hotplug driver automatically online/offline CPUs proportional to system load. 
+
+config MSM_HOTPLUG
+	bool "MSM hotplug driver"
+	depends on HOTPLUG_CPU
+	default y
+	help
+	  The MSM hotplug driver controls on-/offlining of additional cores based
+	  on current cpu load.
